@@ -1,0 +1,103 @@
+<?xml version="1.0"?>
+<project
+        xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
+        xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>org.apache.struts</groupId>
+    <version>1.1.0</version>
+
+    <artifactId>helloworld</artifactId>
+    <name>Hello World Struts 2 Example Application</name>
+    <description>Hello world example application for the Struts 2 Getting Started tutorials</description>
+
+    <packaging>war</packaging>
+
+    <properties>
+        <!-- <maven.compiler.source>11</maven.compiler.source>
+        <maven.compiler.target>11</maven.compiler.target> -->
+    </properties>
+
+    <dependencies>
+        <!-- <dependency>
+            <groupId>com.opensymphony</groupId>
+            <artifactId>xwork</artifactId>
+        </dependency> -->
+
+        <dependency>
+            <groupId>org.apache.struts</groupId>
+            <artifactId>struts2-core</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-core</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>javax.servlet-api</artifactId>
+        </dependency>
+    </dependencies>
+
+    <dependencyManagement>
+        <dependencies>
+            <!-- <dependency>
+                <groupId>com.opensymphony</groupId>
+                <artifactId>xwork</artifactId>
+                <version>2.1.2</version>
+            </dependency> -->
+
+            <dependency>
+                <groupId>org.apache.struts</groupId>
+                <artifactId>struts2-core</artifactId>
+                <version>2.5.26</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.apache.struts</groupId>
+                <artifactId>struts2-config-browser-plugin</artifactId>
+                <version>2.5.26</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.apache.logging.log4j</groupId>
+                <artifactId>log4j-core</artifactId>
+                <version>2.14.1</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.apache.logging.log4j</groupId>
+                <artifactId>log4j-api</artifactId>
+                <version>2.14.1</version>
+            </dependency>
+
+            <dependency>
+                <groupId>javax.servlet</groupId>
+                <artifactId>javax.servlet-api</artifactId>
+                <version>4.0.1</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+    <build>
+        <finalName>hello-world</finalName>
+        <plugins>
+            <plugin>
+                <groupId>org.eclipse.jetty</groupId>
+                <artifactId>jetty-maven-plugin</artifactId>
+                <version>9.4.39.v20210325</version>
+                <!-- <version>11.0.1</version> -->
+                <configuration>
+                    <webApp>
+                        <!-- <contextPath>/${project.artifactId}</contextPath> -->
+                    </webApp>
+                    <stopKey>CTRL+C</stopKey>
+                    <stopPort>8999</stopPort>
+                    <scanIntervalSeconds>10</scanIntervalSeconds>
+                    <scanTargets>
+                        <scanTarget>src/main/webapp/WEB-INF/web.xml</scanTarget>
+                    </scanTargets>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+</project>

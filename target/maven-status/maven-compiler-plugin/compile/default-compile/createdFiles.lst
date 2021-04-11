@@ -1,0 +1,5 @@
+org\apache\struts\helloworld\action\Login.class
+org\apache\struts\helloworld\action\HelloWorldAction.class
+org\apache\struts\helloworld\action\sqltest.class
+org\apache\struts\helloworld\model\Person.class
+org\apache\struts\helloworld\model\MessageStore.class
