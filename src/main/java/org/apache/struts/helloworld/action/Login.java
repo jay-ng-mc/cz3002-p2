@@ -12,16 +12,6 @@ public class Login extends ActionSupport{
     private String username;
     private String password;
     private Person person = new Person(username, password);
-    // private String errorMessage = "login failed";
-
-    // public String getErrorMessage(){
-    //     return errorMessage;
-    // }
-
-    // public void setErrorMessage(String errormsg){
-    //     this.errorMessage = errormsg;
-    // }
-
 
     public String execute(){
         String ret = ERROR;
@@ -38,18 +28,19 @@ public class Login extends ActionSupport{
    
             while (rs.next()) {
                this.password = rs.getString(1);
-               if (this.password.equals(this.person.getPassword())) {
+               if (this.password != null && this.password.equals(this.person.getPassword())) {
                 ret = SUCCESS;
             }
          
                
          }} catch (Exception e) {
-            ret = ERROR; System.out.println(e);
+            System.out.println(e);
          } finally {
             if (conn != null) {
                try {
                   conn.close();
                } catch (Exception e) {
+                  System.out.println(e);
                }
             }
          }
