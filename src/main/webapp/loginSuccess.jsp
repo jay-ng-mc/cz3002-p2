@@ -6,9 +6,11 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>Login Success!</title>
   </head>
-  <body>
-    <h2>Login Success!</h2>
-  </body>
+<body>
+	<div align="center">
+		<h1>You have logined successfully! </h1>
+	</div>
+</body>
   <body>
     <h2><s:property value="Person.Person" /></h2>
   </body>

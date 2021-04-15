@@ -13,10 +13,14 @@
         render the result index.jsp -->
         <!-- If no name value for the result node is specified the success value is the default -->
 		<action name="">
-			<result>/index.jsp</result>
+			<result>/login.jsp</result>
 		</action>
 		<action name="index">
-			<result>/index.jsp</result>
+			<result>/login.jsp</result>
+		</action>
+		<action name="login" class="org.apache.struts.helloworld.action.Login" method="execute">
+			<result name="success">/loginSuccess.jsp</result>
+			<result name="error">/loginFailure.jsp</result>
 		</action>
 		
 		<!-- If the URL is hello.action then call the execute method of class HelloWorldAction.
